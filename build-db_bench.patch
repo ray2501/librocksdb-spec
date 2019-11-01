@@ -1,0 +1,22 @@
+Index: rocksdb-6.4.6/tools/CMakeLists.txt
+===================================================================
+--- rocksdb-6.4.6.orig/tools/CMakeLists.txt
++++ rocksdb-6.4.6/tools/CMakeLists.txt
+@@ -1,5 +1,6 @@
+ set(TOOLS
+   sst_dump.cc
++  blob_dump.cc
+   db_sanity_test.cc
+   db_stress.cc
+   write_stress.cc
+@@ -14,6 +15,9 @@ foreach(src ${TOOLS})
+   target_link_libraries(${exename}${ARTIFACT_SUFFIX} ${LIBS})
+   list(APPEND tool_deps ${exename})
+ endforeach()
++add_executable(db_bench${ARTIFACT_SUFFIX} db_bench_tool.cc db_bench.cc)
++target_link_libraries(db_bench${ARTIFACT_SUFFIX} ${LIBS})
++list(APPEND tool_deps db_bench${ARTIFACT_SUFFIX})
+ add_custom_target(tools
+   DEPENDS ${tool_deps})
+ add_custom_target(ldb_tests
+
