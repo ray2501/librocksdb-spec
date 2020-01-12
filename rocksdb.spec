@@ -27,7 +27,7 @@
 %endif
 
 Name:           rocksdb
-Version:        6.5.2
+Version:        6.5.3
 Release:        0
 Summary:        An embeddable, persistent key-value store for fast storage
 License:        Apache-2.0 AND GPL-2.0-only

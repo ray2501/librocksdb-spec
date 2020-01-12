@@ -1,7 +1,7 @@
-Index: rocksdb-6.5.2/tools/CMakeLists.txt
+Index: rocksdb-6.5.3/tools/CMakeLists.txt
 ===================================================================
---- rocksdb-6.5.2.orig/tools/CMakeLists.txt
-+++ rocksdb-6.5.2/tools/CMakeLists.txt
+--- rocksdb-6.5.3.orig/tools/CMakeLists.txt
++++ rocksdb-6.5.3/tools/CMakeLists.txt
 @@ -1,5 +1,6 @@
  set(TOOLS
    sst_dump.cc
