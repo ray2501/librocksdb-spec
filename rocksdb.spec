@@ -27,7 +27,7 @@
 %endif
 
 Name:           rocksdb
-Version:        6.5.3
+Version:        6.7.3
 Release:        0
 Summary:        An embeddable, persistent key-value store for fast storage
 License:        Apache-2.0 AND GPL-2.0-only
@@ -156,7 +156,8 @@ This package holds the development files for statically linking RocksDB.
 pushd build/tools/
 install -D -m 0755 -d %{buildroot}%{_toolsdir}
 install -D -m 0755 \
-    db_bench sst_dump rocksdb_undump rocksdb_dump ldb db_sanity_test write_stress db_repl_stress db_stress blob_dump \
+    ../db_bench sst_dump rocksdb_undump rocksdb_dump ldb db_sanity_test write_stress db_repl_stress \
+    ../db_stress_tool/db_stress blob_dump \
   %{buildroot}%{_toolsdir}
 popd
 
@@ -191,4 +192,3 @@ popd
 %{_libdir}/librocksdb.a
 
 %changelog
-

@@ -1,8 +1,8 @@
 #!/usr/bin/tclsh
 
 set arch "x86_64"
-set base "rocksdb-6.5.3"
-set fileurl "https://github.com/facebook/rocksdb/archive/v6.5.3.tar.gz"
+set base "rocksdb-6.7.3"
+set fileurl "https://github.com/facebook/rocksdb/archive/v6.7.3.tar.gz"
 
 set var [list wget $fileurl -O $base.tar.gz]
 exec >@stdout 2>@stderr {*}$var
