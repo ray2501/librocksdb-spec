@@ -134,11 +134,15 @@ This package holds the development files for statically linking RocksDB.
  -DWITH_FALLOCATE:BOOL=ON      \
  %if %{with gflags}
  -DWITH_GFLAGS:BOOL=ON         \
+ %else
+ -DWITH_GFLAGS:BOOL=OFF        \
  %endif
  -DWITH_JEMALLOC:BOOL=ON       \
  -DWITH_JNI:BOOL=OFF           \
  %if %{with librados}
  -DWITH_LIBRADOS:BOOL=ON       \
+ %else
+ -DWITH_LIBRADOS:BOOL=OFF      \
  %endif
  -DWITH_LZ4:BOOL=ON            \
  -DWITH_NUMA:BOOL=ON           \
