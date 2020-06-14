@@ -18,14 +18,6 @@
 
 %define _toolsdir %{_libexecdir}/%{name}
 
-%if 0%{?suse_version} >= 1510 || 0%{?sle_version} >= 150100
-%bcond_without librados
-%bcond_without gflags
-%else
-%bcond_with    librados
-%bcond_with    gflags
-%endif
-
 Name:           rocksdb
 Version:        6.7.3
 Release:        0
@@ -48,13 +40,6 @@ BuildRequires:  pkgconfig(jemalloc)
 BuildRequires:  pkgconfig(liblz4)
 BuildRequires:  pkgconfig(libzstd)
 BuildRequires:  pkgconfig(zlib)
-%if %{with gflags}
-BuildRequires:  gflags-devel-static
-BuildRequires:  pkgconfig(gflags)
-%endif
-%if %{with librados}
-BuildRequires:  libradospp-devel
-%endif
 %if 0%{?suse_version} >= 1550
 BuildRequires:  pkgconfig(snappy)
 %else
@@ -132,18 +117,10 @@ This package holds the development files for statically linking RocksDB.
  -DPORTABLE:BOOL=ON            \
  -DWITH_BZ2:BOOL=ON            \
  -DWITH_FALLOCATE:BOOL=ON      \
- %if %{with gflags}
- -DWITH_GFLAGS:BOOL=ON         \
- %else
  -DWITH_GFLAGS:BOOL=OFF        \
- %endif
  -DWITH_JEMALLOC:BOOL=ON       \
  -DWITH_JNI:BOOL=OFF           \
- %if %{with librados}
- -DWITH_LIBRADOS:BOOL=ON       \
- %else
  -DWITH_LIBRADOS:BOOL=OFF      \
- %endif
  -DWITH_LZ4:BOOL=ON            \
  -DWITH_NUMA:BOOL=ON           \
  -DWITH_SNAPPY:BOOL=ON         \
