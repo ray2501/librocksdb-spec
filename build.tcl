@@ -1,8 +1,8 @@
 #!/usr/bin/tclsh
 
 set arch "x86_64"
-set base "rocksdb-6.7.3"
-set fileurl "https://github.com/facebook/rocksdb/archive/v6.7.3.tar.gz"
+set base "rocksdb-6.10.2"
+set fileurl "https://github.com/facebook/rocksdb/archive/v6.10.2.tar.gz"
 
 set var [list wget $fileurl -O $base.tar.gz]
 exec >@stdout 2>@stderr {*}$var
@@ -15,6 +15,7 @@ file mkdir build/BUILD build/RPMS build/SOURCES build/SPECS build/SRPMS
 file copy -force $base.tar.gz build/SOURCES
 file copy -force build-db_bench.patch build/SOURCES
 file copy -force gtest-pthread.patch build/SOURCES
+file copy -force CMakeLists.txt.patch build/SOURCES
 
 set buildit [list rpmbuild --target $arch --define "_topdir [pwd]/build" -bb rocksdb.spec]
 exec >@stdout 2>@stderr {*}$buildit

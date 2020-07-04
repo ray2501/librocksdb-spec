@@ -19,7 +19,7 @@
 %define _toolsdir %{_libexecdir}/%{name}
 
 Name:           rocksdb
-Version:        6.7.3
+Version:        6.10.2
 Release:        0
 Summary:        An embeddable, persistent key-value store for fast storage
 License:        Apache-2.0 AND GPL-2.0-only
@@ -29,6 +29,7 @@ Source:         rocksdb-%{version}.tar.gz
 Source99:       series
 Patch1:         gtest-pthread.patch
 Patch2:         build-db_bench.patch
+Patch3:         CMakeLists.txt.patch
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  libnuma-devel
