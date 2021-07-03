@@ -1,13 +1,13 @@
-Index: rocksdb-6.14.6/CMakeLists.txt
+Index: rocksdb-6.20.3/CMakeLists.txt
 ===================================================================
---- rocksdb-6.14.6.orig/CMakeLists.txt	2020-07-04 09:23:15.673828759 +0800
-+++ rocksdb-6.14.6/CMakeLists.txt	2020-07-04 09:46:53.123896084 +0800
-@@ -1301,7 +1301,7 @@
-   add_executable(table_reader_bench
+--- rocksdb-6.20.3.orig/CMakeLists.txt	2021-07-03 19:24:25.461922836 +0800
++++ rocksdb-6.20.3/CMakeLists.txt	2021-07-03 19:24:34.665934673 +0800
+@@ -1344,7 +1344,7 @@
+   add_executable(table_reader_bench${ARTIFACT_SUFFIX}
      table/table_reader_bench.cc)
-   target_link_libraries(table_reader_bench
+   target_link_libraries(table_reader_bench${ARTIFACT_SUFFIX}
 -    ${ROCKSDB_LIB} testharness ${GFLAGS_LIB})
 +    ${ROCKSDB_LIB} ${GFLAGS_LIB})
  
-   add_executable(filter_bench
+   add_executable(filter_bench${ARTIFACT_SUFFIX}
      util/filter_bench.cc)

@@ -19,7 +19,7 @@
 %define _toolsdir %{_libexecdir}/%{name}
 
 Name:           rocksdb
-Version:        6.16.4
+Version:        6.20.3
 Release:        0
 Summary:        An embeddable, persistent key-value store for fast storage
 License:        Apache-2.0 AND GPL-2.0-only
