@@ -37,7 +37,7 @@ BuildRequires:  make
 BuildRequires:  pkgconfig
 BuildRequires:  tbb-devel
 BuildRequires:  pkgconfig(bzip2)
-BuildRequires:  pkgconfig(jemalloc)
+#BuildRequires:  pkgconfig(jemalloc)
 BuildRequires:  pkgconfig(liblz4)
 BuildRequires:  pkgconfig(libzstd)
 BuildRequires:  pkgconfig(zlib)
@@ -119,7 +119,7 @@ This package holds the development files for statically linking RocksDB.
  -DWITH_BZ2:BOOL=ON            \
  -DWITH_FALLOCATE:BOOL=ON      \
  -DWITH_GFLAGS:BOOL=OFF        \
- -DWITH_JEMALLOC:BOOL=ON       \
+ -DWITH_JEMALLOC:BOOL=OFF      \
  -DWITH_JNI:BOOL=OFF           \
  -DWITH_LIBRADOS:BOOL=OFF      \
  -DWITH_LZ4:BOOL=ON            \
